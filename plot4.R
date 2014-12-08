@@ -12,6 +12,6 @@ plot4source <- merge(NEIsub, SCCsub, by = "SCC")
 plot4all <- subset(plot4source, grepl("Coal",plot4source$Short.Name))
 plot4 <- aggregate(Emissions ~ year, plot4all, sum)
 
-p <- ggplot(plot4, aes(year,Emissions)) + xlab("Year") + ylab("Emissions (Tons)") + ggtitle("Total US PM2.5 Emissions by Year")
+p <- ggplot(plot4, aes(year,Emissions)) + xlab("Year") + ylab("Emissions (Tons)") + ggtitle("Total US PM2.5 Coal Emissions by Year")
 p+geom_point(color="steelblue", size=4, alpha= 1/2)+geom_line()
 ggsave(file="plot4.png")
